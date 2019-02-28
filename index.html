@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel='manifest' href='/manifest/manifest.webmanifest' data-parceljs-ignore>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>A PWA application</title>
+
+    <!-- Preload is something the reaources that we need soon before the first paint occrus-->
+    
+    <link rel="preload" href="node_modules/bulma/css/bulma.min.css" as="style" />
+    <link rel="preload" href="main.css" as="style" />
+    <link rel="preload" href="node_modules/fg-loadcss/dist/loadCSS.min.js" as="script" />
+    <!-- preloading config end -->
+
+    <!-- static assetts that can be prefetched -->
+    <link rel="prefetch" href="https://placehold.it/100X100" as="image" />
+
+    <!-- css and js needed for intial paint of app shell -->
+    <link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css" />
+    <link rel="stylesheet" href="main.css">
+
+    <noscript>Your browser does not support JavaScript!</noscript>
+    <script src="node_modules/fg-loadcss/dist/loadCSS.min.js"></script>
+    <!-- css and js needed for intial paint of app shell -->
+</head>
+
+<body>
+
+    <head>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="https://bulma.io">
+                    <img src="https://placehold.it/100X100" width="112" height="28" />
+                </a>
+
+                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item">
+                        Home
+                    </a>
+
+                    <a class="navbar-item">
+                        Documentation
+                    </a>
+
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">
+                            More
+                        </a>
+
+                        <div class="navbar-dropdown">
+                            <a class="navbar-item">
+                                About
+                            </a>
+                            <a class="navbar-item">
+                                Jobs
+                            </a>
+                            <a class="navbar-item">
+                                Contact
+                            </a>
+                            <hr class="navbar-divider" />
+                            <a class="navbar-item">
+                                Report an issue
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <a class="button is-primary">
+                                <strong>Sign up</strong>
+                            </a>
+                            <a class="button is-light">
+                                Log in
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </head>
+    <main>
+        <div class="main-container">
+            <div class="container">
+                <!-- hero header row -->
+                <div class="columns hero-heading">
+                    <h1> NEWS HERE </h1>
+                </div>
+
+                <!-- news cards container-->
+                <div class="news-cards-container">
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <div class="dialog"></div>
+    <div class="loader is-hidden"></div>
+    
+    <script src="main.js"></script>
+    <script>
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('./sw.js');
+        })
+      
+    </script>
+</body>
+
+</html>

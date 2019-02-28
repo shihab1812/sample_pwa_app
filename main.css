@@ -1,0 +1,23 @@
+nav.navbar {
+	background: #d6d6d6;
+}
+main {
+	margin: 50px 50px;
+}
+
+.hero-heading {
+	font-size: 28px;
+}
+
+.news-cards-container {
+	margin: 30px auto;
+}
+.card {
+	padding: 10px;
+	box-shadow: 0 0 5px #ddd;
+}
+
+.media-img-standard {
+	width: 250px;
+	height: 250px;
+}
